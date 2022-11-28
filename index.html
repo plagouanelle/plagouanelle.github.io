@@ -38,7 +38,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 				<ul>
 					<li><a href="#bio">Bio</a></li>
 					<li><a href="#work">Work</a></li>
-					<li><a href="#research">Research</a></li>
+					<li><a href="#publications">Publications</a></li>
 					<li><a href="#miscellaneous">Misc.</a></li>
 					<li><a href="mailto:paul.lagouanelle@centralesupelec.fr">Contact</a></li>
 					<!--<li><a href="#elements">Elements</a></li>-->
@@ -64,30 +64,41 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 			<!-- Intro -->
 			<article id="work">
 				<h2 class="major">Research work</h2>
-				<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
 
 				<p>
-
-					My work focuses on the uncertainty quantification for human exposure assessment on high-power transfer systems.
-					Due to the high complexity of such systems, one cannot simply use a FEM model or conduct numerous experiments to perform an accurate sensitvity analysis using MCMC for example, as it would take too much computation time.
-					teapplications of surrogate modelling on high-power inductive transfer systems.
-
+					My work is currently focusing on high power inductive power transfer systems(IPT) in general. 
+					Due to the variability of many geometrical or physical parameters in these systems, their numerical models are extremely complex.
+					Thus, one cannot simply use a FEM model or conduct numerous experiments to perform an accurate sensitivity analysis for example, as it would take too much computation time.
+					Hence why, I introduced a useful combination of surrogate models (metamodels) with the complex model in order to build accurate predictors at a low computation cost.
+					The predictor can then be used in lieu of the real model for various computations such as sensitivity analysis or optimization processes.
 				</p>
-
+				
 				<p>
 
-					Thus, I used a combination of Kriging and polynomial chaos expansion surrogate models called metamodelling, in order to build an accurate and consistent predictor for our complex models using fewer samples than classical methods.
+					In order to build an accurate predictor for various systems, I developed an adaptive algorithm using fewer samples than classical methods which builds a training dataset sequentially focusing on the regions where the uncertainty is the greatest.
+					The resulting metamodel is based on a combination of Kriging and polynomial chaos expansion surrogate models.
 					This predictor is an analytical function which can be computed at instant speed and allows fast and reliable sensitivity analysis.
-					This sensitivity analysis can then be used to assess the behaviour of the system regarding human exposure guidelines.
 					The accurate predictor can also be used instead of the estimated output model for optimization algorithm when building new designs.
-
 				</p>
+				
+				<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
+				
+				<p>
+				My work is particularly focusing on the assessment of human exposure around high power IPT systems.
+				With the extreme complexity of current 3D human models, metamodelling processes can be particularly useful for estimating the induced field values in the human body in the vicinity of IPT systems. 
+				A dosimetric methodology has been developed to compute easily safety areas around IPT systems according to the current standard and guidelines on electromagentic fields.
+				In particular the case of a numerical model for a standardized WPT system has been analyzed along with some measurements on a real WPT system. 
+				The case of a mid-frequency direct current welding gun, needier of exposure assessement, has been also tackled with metamodelling on the response to pulsed magnetic fields.
+				</p>
+				
+				<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
+
 			</article>
 
-			<!-- Research -->
-			<article id="research">
-				<h2 class="major">Publications and conferences</h2>
-				<p><b> Articles :</b></p>
+			<!-- Publications -->
+			<article id="publications">
+				<h2 class="major">Publications</h2>
+				<p><b> Journal :</b></p>
 				<ul>
 					<li><b>Paul Lagouanelle</b>, Oriano Bottauscio, Lionel Pichon, and Mauro Zucca. Impact of parameters variability on the level of human exposure due to inductive power transfer. <em>IEEE Transactions on Magnetics</em>, 57(6):1--4, 2021.<br /><br />
 					</li>
@@ -106,20 +117,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 					</li>
 				</ul>
 			</article>
-
-			<!-- Teaching -->
-			<!-- <article id="teaching">
-			<h2 class="major">Teaching</h2>
-			<ul>
-			<li> 2016 - today : Oral examiner for pre-bachelor students in Physics in Lycée Buffon (Paris, France)
-		</li>
-		<li> 2020 - 2021 : Introduction to general Physics in 1st year of IUT de Cachan (Université Paris-Saclay, France)
-	</li>
-	<li> 2017 : French teacher assistant in Massey University (Palmerston North, New Zealand)
-</li>
-<li> 2016 - 2017 : Mathematics teacher assistant for students in the last two years of high school in Lycée Buffon (Paris, France)
-</li>
-</ul> -->
 
 <!-- miscellaneous -->
 <article id="miscellaneous">
