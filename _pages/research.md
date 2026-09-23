@@ -9,47 +9,73 @@ nav_order: 1
 
 ### Surrogate modeling for complex electromagnetic problems
 
-Full electromagnetic simulations of complex systems — wireless power transfer (WPT) chargers, human-body exposure models, planetary electromagnetic cavities — are too costly to run thousands of times for sensitivity analysis, optimization, or uncertainty quantification. My work builds *surrogate models* (metamodels, e.g. polynomial-chaos Kriging) that approximate these simulations at a fraction of the cost, while retaining the accuracy needed for real design and safety decisions. The same toolbox now spans three settings: RF-EMF exposure from telecommunications networks, Titan's electromagnetic cavity, and high-power WPT/human-exposure systems.
+Across many electromagnetic problems, the physical model of interest is either too costly to evaluate many times or only partially known, better described by scattered field measurements, sensor readings, or past campaigns than by any closed-form model. Surrogate modeling addresses both situations: a compact statistical model (e.g., Kriging, ANN, boosting methods) is trained on whichever data is available — costly simulations, real measurements, or both — in order to approximate the underlying physics. Once an accurate surrogate has been built, it can be used at a low computation cost wherever the use of the direct model would fail due to incomplete data or huge computation time: sensitivity analysis, optimization, inverse problems... This general framework underlies my work across three very different settings, described below: RF-EMF exposure from telecommunications networks, Titan's electromagnetic cavity, and high-power WPT/human-exposure systems.
 
 <figure>
-<svg viewBox="0 0 920 220" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto;">
-  <rect x="10" y="50" width="230" height="120" rx="12" style="fill:none; stroke:var(--global-divider-color); stroke-width:1.5;" />
-  <text x="125" y="86" text-anchor="middle" style="fill:var(--global-text-color); font-size:16px; font-weight:600;">Full 3D</text>
-  <text x="125" y="106" text-anchor="middle" style="fill:var(--global-text-color); font-size:16px; font-weight:600;">electromagnetic</text>
-  <text x="125" y="126" text-anchor="middle" style="fill:var(--global-text-color); font-size:16px; font-weight:600;">simulation</text>
-  <text x="125" y="152" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:13px;">FEM / circuit model</text>
+<svg viewBox="0 0 1000 540" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto;">
+  <!-- Design parameters -->
+  <rect x="20" y="130" width="180" height="200" rx="14" style="fill:none; stroke:var(--global-text-color); stroke-width:2;" />
+  <text x="110" y="163" text-anchor="middle" style="fill:var(--global-text-color); font-size:18px; font-weight:600;">Design</text>
+  <text x="110" y="184" text-anchor="middle" style="fill:var(--global-text-color); font-size:18px; font-weight:600;">parameters</text>
+  <line x1="20" y1="196" x2="200" y2="196" style="stroke:var(--global-text-color); stroke-width:2;" />
+  <text x="110" y="228" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:16px; font-style:italic;">x&#8321;</text>
+  <text x="110" y="256" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:16px; font-style:italic;">x&#8322;</text>
+  <text x="110" y="284" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:16px;">&#8942;</text>
+  <text x="110" y="312" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:16px; font-style:italic;">x&#8345;</text>
 
-  <line x1="240" y1="110" x2="335" y2="110" style="stroke:var(--global-theme-color); stroke-width:2;" marker-end="url(#arrowhead)" />
-  <text x="287" y="97" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:12px;">a few expensive</text>
-  <text x="287" y="132" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:12px;">samples</text>
+  <!-- Simulations -->
+  <rect x="300" y="20" width="180" height="90" rx="12" style="fill:none; stroke:var(--global-text-color); stroke-width:2;" />
+  <text x="390" y="50" text-anchor="middle" style="fill:var(--global-text-color); font-size:18px; font-weight:600;">Simulations</text>
+  <line x1="300" y1="62" x2="480" y2="62" style="stroke:var(--global-text-color); stroke-width:2;" />
+  <text x="390" y="86" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:15px; font-style:italic;">y = f(x)</text>
 
-  <rect x="345" y="50" width="230" height="120" rx="12" style="fill:none; stroke:var(--global-divider-color); stroke-width:1.5;" />
-  <text x="460" y="76" text-anchor="middle" style="fill:var(--global-text-color); font-size:16px; font-weight:600;">Surrogate model</text>
-  <text x="460" y="95" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:13px;">(Kriging / PCK)</text>
-  <path d="M365,155 C 400,112 430,100 465,115 C 500,130 520,150 545,140" style="fill:none; stroke:var(--global-theme-color); stroke-width:2;" />
-  <circle cx="375" cy="148" r="3.5" style="fill:var(--global-theme-color);" />
-  <circle cx="405" cy="118" r="3.5" style="fill:var(--global-theme-color);" />
-  <circle cx="440" cy="104" r="3.5" style="fill:var(--global-theme-color);" />
-  <circle cx="478" cy="118" r="3.5" style="fill:var(--global-theme-color);" />
-  <circle cx="518" cy="145" r="3.5" style="fill:var(--global-theme-color);" />
+  <!-- Measurements -->
+  <rect x="520" y="20" width="180" height="90" rx="12" style="fill:none; stroke:var(--global-text-color); stroke-width:2;" />
+  <text x="610" y="50" text-anchor="middle" style="fill:var(--global-text-color); font-size:18px; font-weight:600;">Measurements</text>
+  <line x1="520" y1="62" x2="700" y2="62" style="stroke:var(--global-text-color); stroke-width:2;" />
+  <text x="610" y="86" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:15px;">sensors, campaigns</text>
 
-  <line x1="575" y1="110" x2="670" y2="110" style="stroke:var(--global-theme-color); stroke-width:2;" marker-end="url(#arrowhead)" />
-  <text x="622" y="97" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:12px;">instant,</text>
-  <text x="622" y="132" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:12px;">everywhere</text>
+  <!-- Surrogate model -->
+  <rect x="360" y="350" width="280" height="110" rx="14" style="fill:none; stroke:var(--global-theme-color); stroke-width:2;" />
+  <text x="500" y="382" text-anchor="middle" style="fill:var(--global-text-color); font-size:18px; font-weight:600;">Surrogate model</text>
+  <line x1="360" y1="394" x2="640" y2="394" style="stroke:var(--global-theme-color); stroke-width:2;" />
+  <text x="500" y="420" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:15px; font-style:italic;">y &#8776; f&#770;(x)</text>
+  <text x="500" y="443" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:13px;">Kriging, polynomial chaos, ...</text>
 
-  <rect x="680" y="50" width="230" height="120" rx="12" style="fill:none; stroke:var(--global-divider-color); stroke-width:1.5;" />
-  <text x="795" y="76" text-anchor="middle" style="fill:var(--global-text-color); font-size:16px; font-weight:600;">Fast predictions</text>
-  <text x="795" y="102" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:13px;">sensitivity analysis</text>
-  <text x="795" y="124" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:13px;">optimization</text>
-  <text x="795" y="146" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:13px;">exposure maps</text>
+  <!-- Predictions -->
+  <rect x="800" y="130" width="180" height="200" rx="14" style="fill:none; stroke:var(--global-text-color); stroke-width:2;" />
+  <text x="890" y="163" text-anchor="middle" style="fill:var(--global-text-color); font-size:18px; font-weight:600;">Predictions</text>
+  <line x1="800" y1="176" x2="980" y2="176" style="stroke:var(--global-text-color); stroke-width:2;" />
+  <text x="890" y="205" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:14px;">sensitivity analysis</text>
+  <text x="890" y="233" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:14px;">optimization</text>
+  <text x="890" y="261" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:14px;">field / exposure maps</text>
+
+  <!-- Expensive (dashed) arrows -->
+  <line x1="201" y1="185" x2="295" y2="90" style="stroke:#e0575a; stroke-width:2.5; stroke-dasharray:7,5;" marker-end="url(#arrow-expensive)" />
+
+  <!-- Cheap (solid, theme color) arrows -->
+  <line x1="201" y1="290" x2="358" y2="400" style="stroke:var(--global-theme-color); stroke-width:2.5;" marker-end="url(#arrow-cheap)" />
+  <line x1="365" y1="112" x2="450" y2="348" style="stroke:var(--global-theme-color); stroke-width:2.5;" marker-end="url(#arrow-cheap)" />
+  <line x1="600" y1="112" x2="540" y2="348" style="stroke:var(--global-theme-color); stroke-width:2.5;" marker-end="url(#arrow-cheap)" />
+  <text x="505" y="255" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:14px;">training</text>
+  <line x1="642" y1="400" x2="798" y2="280" style="stroke:var(--global-theme-color); stroke-width:2.5;" marker-end="url(#arrow-cheap)" />
+
+  <!-- Legend -->
+  <line x1="40" y1="495" x2="90" y2="495" style="stroke:#e0575a; stroke-width:2.5; stroke-dasharray:7,5;" />
+  <text x="100" y="500" style="fill:var(--global-text-color-light); font-size:14px;">Expensive &#8212; many simulation or measurement campaigns</text>
+  <line x1="40" y1="523" x2="90" y2="523" style="stroke:var(--global-theme-color); stroke-width:2.5;" />
+  <text x="100" y="528" style="fill:var(--global-text-color-light); font-size:14px;">Cheap &#8212; training and querying the surrogate</text>
 
   <defs>
-    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-      <path d="M0,0 L6,3 L0,6 Z" style="fill:var(--global-theme-color);" />
+    <marker id="arrow-expensive" markerWidth="9" markerHeight="9" refX="6.5" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" style="fill:#e0575a;" />
+    </marker>
+    <marker id="arrow-cheap" markerWidth="9" markerHeight="9" refX="6.5" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" style="fill:var(--global-theme-color);" />
     </marker>
   </defs>
 </svg>
-<figcaption class="caption">The principle behind all three research settings below: fit a cheap surrogate to a handful of expensive simulations, then use it wherever the real model would be too costly to run.</figcaption>
+<figcaption class="caption">The principle behind all three research settings below: train a cheap surrogate on whichever data is available — costly simulations, real measurements, or both — then use it wherever the true model would be too slow or too incomplete to query directly.</figcaption>
 </figure>
 
 **Related publications:**
