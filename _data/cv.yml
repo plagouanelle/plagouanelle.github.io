@@ -1,0 +1,184 @@
+cv:
+  name: Paul Lagouanelle
+  label: Postdoctoral Researcher in Computational Electromagnetics
+  email: paul.lagouanelle@telecom-paris.fr
+  location: Palaiseau, France
+  image: ""
+  summary: >
+    Postdoctoral fellow at the Chaire C2M, Télécom Paris, working on surrogate modeling for the spatial and temporal
+    prediction of RF-EMF exposure to telecommunications networks. Ph.D. in electrical engineering (GeePs, Université
+    Paris-Saclay / Politecnico di Torino) on metamodel-based methods for human exposure assessment around high-power
+    systems, followed by a postdoc at LATMOS on the EFIELD/Dragonfly experiment to Titan.
+
+  address:
+    street: 19, place Marguerite Perey, Chaire C2M, LTCI, Télécom Paris
+    city: Palaiseau
+    region: Île-de-France
+    postalCode: "91120"
+    countryCode: FR
+
+  sections:
+    Experience:
+      - company: Chaire C2M, LTCI, Télécom Paris, Institut Polytechnique de Paris
+        position: Postdoctoral Fellow
+        location: Palaiseau, France
+        start_date: 2025-10
+        summary: >
+          Supervision Shanshan Wang, Joe Wiart. Project: spatial and temporal prediction of EMF exposure to
+          telecommunications networks using surrogate modeling.
+
+      - company: LATMOS, Sorbonne Université
+        position: Postdoctoral Fellow
+        location: Paris, France
+        start_date: 2023-03
+        end_date: 2025-09
+        summary: >
+          Supervision Alice Le Gall. Project: scientific return of the electrical sensors on-board the Dragonfly
+          mission to Titan (NASA).
+
+    Education:
+      - institution: GeePs, Université Paris-Saclay, and Politecnico di Torino
+        location: Gif-sur-Yvette, France, and Turin, Italy
+        studyType: Ph.D. in Electrical Engineering
+        area: >
+          Metamodel-based methodology for fast prediction of human exposure due to high power systems. Supervised by
+          Lionel Pichon (GeePs) and Fabio Freschi (Politecnico di Torino). Defense: March 26th, 2023. Reviewers:
+          Alain Reineix (XLIM), Giambattista Gruosso (Politecnico di Milano). Examiners: Eric Labouré (GeePs), Luca
+          Giaccone (Politecnico di Torino).
+        start_date: 2019-09
+        end_date: 2023-02
+
+      - institution: École Normale Supérieure Paris-Saclay (formerly ENS Cachan)
+        location: Gif-sur-Yvette, France
+        studyType: ENS Paris-Saclay diploma — civil servant and student
+        area: >
+          M2 Physique et Ingénierie de l'Énergie at Université Paris-Saclay, summa cum laude (computational
+          electromagnetics, power electronics, magnetic materials, electric power distribution, electromagnetic
+          compatibility); pre-doctoral research year abroad; M1 and Bachelor's degree in Physics at ENS Cachan in
+          partnership with Université Pierre et Marie Curie (now Sorbonne Université), magna cum laude, PHYTEM
+          (Physics, Theory, Experimentation, Modelization).
+        start_date: 2015-09
+        end_date: 2019
+
+      - institution: Lycée Pierre de Fermat
+        location: Toulouse, France
+        studyType: CPGE PCSI-PSI*
+        area: >
+          Three intensive years of training in physics, mathematics and engineering to prepare competitive
+          examinations for engineering and research schools. Summa cum laude.
+        start_date: 2012
+        end_date: 2015
+
+    Research Experience:
+      - label: GeePs, Université Paris-Saclay (internship, Mar – Jul 2019)
+        details: >
+          Surrogate models for the human exposure to simple wireless power transfer systems for electrical
+          vehicles. Supervised by Prof. Lionel Pichon.
+      - label: DTU Energi (pre-doctoral research year abroad, 2017 – 2018)
+        details: >
+          "Permanent magnet bearings for levitating flywheels", Copenhagen, Denmark. Supervised by Prof. Kaspar
+          Kirstein Nielsen, Prof. Christian Bahl, and Prof. Rasmus Bjørk.
+      - label: Massey University (internship, Apr – Aug 2017)
+        details: >
+          "Solving the Schrödinger's equation using path integrals", Department of Statistics, Palmerston North,
+          New Zealand. Supervised by Prof. Stephen Marsland and Prof. Matthieu Vignes.
+      - label: LAPLACE, Université Paul Sabatier (internship, May – Jun 2016)
+        details: >
+          Modeling and simulations of electromagnetic waves in a resonant cavity thruster (EmDrive), Toulouse,
+          France. Supervised by Prof. Jérôme Sokoloff and Prof. Nathalie Raveu.
+
+    Supervision:
+      - label: Ph.D. supervision — Yukun Liu (2025 – present), LTCI, Télécom Paris
+        details: >
+          "Uncertainty quantification in predicting EMF exposure with artificial neural networks", with Prof.
+          Shanshan Wang.
+      - label: M2 internship — Saif Meftah (Jun – Dec 2026), LTCI, Télécom Paris
+        details: >
+          "Boosting methods for predicting temporal and spatial variations of E-field levels in urban
+          environments", with Prof. Shanshan Wang.
+      - label: M1 internship — Ethan Reuchin (Apr – Jul 2025), LATMOS, Université Paris-Saclay
+        details: >
+          "Data acquisition for the DIEL Sensor from the Dragonfly mission: sensitivity analysis and optimization
+          of design parameters", with Prof. Alice Le Gall.
+      - label: M1 internship — Bruno Martin Peña (Apr – Sep 2024), LATMOS, Université Paris-Saclay
+        details: >
+          "Sensitivity analysis of the EFIELD sensors aboard the Dragonfly mission to Titan for measuring Schumann
+          resonances", with Prof. Alice Le Gall.
+      - label: Bachelor internship — Pierrot Cadeilhan (May – Jul 2024), LATMOS, Université Paris-Saclay
+        details: >
+          "Feasibility of Schumann Resonances' measuring using multimodal measurements from the EFIELD experiment
+          on-board Dragonfly", with Prof. Alice Le Gall.
+      - label: Bachelor internship — Sahil Deshmukh (May – Jun 2019), GeePs, Université Paris-Saclay
+        details: >
+          "Assessment of human exposure with stochastic models for wireless charging of electrical vehicles", with
+          Prof. Lionel Pichon.
+
+    Teaching:
+      - label: Physics oral examiner — Lycée Buffon, Paris (2016 – present)
+        details: Oral examiner for CPGE pre-bachelor students in Physics (PSI).
+      - label: Physics teacher — IUT de Cachan, Université Paris-Saclay (2020 – 2022)
+        details: >
+          Introduction course to general physics (mechanics, electromagnetics, thermodynamics) for first-year
+          students.
+      - label: French assistant teacher — Massey University, New Zealand (Apr – Aug 2017)
+        details: Tutoring for students at various levels at the university.
+      - label: Mathematics assistant teacher — Lycée Buffon, Paris (Sep 2016 – Mar 2017)
+        details: Lessons and tutoring for high school students.
+
+    Collective responsibilities:
+      - bullet: "2023 – 2025: Co-organizer of the monthly young researchers seminar, LATMOS, Université Paris-Saclay"
+      - bullet: "2023 – 2025: Postdoctoral fellow representative at LATMOS lab council, LATMOS, Université Paris-Saclay"
+      - bullet: "2021 – 2023: Responsible for the GeePs lab cafeteria, GeePs, Université Paris-Saclay"
+      - bullet: "2020 – 2022: PhD student representative at GeePs lab council, GeePs, Université Paris-Saclay"
+
+    Awards:
+      - title: URSI GASS Young Scientist Award
+        date: 2026-08
+        awarder: URSI GASS
+        summary: >
+          Award from the XXXVIth URSI General Assembly and Scientific Symposium (URSI GASS 2026) in Krakow, Poland,
+          15 – 22 August 2026.
+      - title: URSI France Young Scientist Award
+        date: 2026-05
+        awarder: URSI France
+        summary: >
+          Award from the Journées scientifiques d'URSI-France, 5–7 May 2026, Télécom Paris, Institut Polytechnique
+          de Paris, Palaiseau.
+      - title: Accessit, Graduate School SIS
+        date: 2025
+        awarder: Université Paris-Saclay
+        summary: PhD award from the Graduate School Sciences de l'Ingénierie et des Systèmes.
+      - title: DIM ACAV+ Program
+        date: 2023
+        awarder: Région Île-de-France
+        summary: >
+          Post-doctoral grant from the "Domaine d'Intérêt Majeur" ACAV+ on Astrophysics and Conditions for the
+          Emergence of Life.
+      - title: Vinci Program
+        date: 2021
+        awarder: Franco-Italian University
+        summary: Funded research stay (6k€) for PhD cotutelle in Turin, Italy.
+      - title: CDSN
+        date: 2019
+        awarder: ENS Paris-Saclay
+        summary: PhD funding from ENS Paris-Saclay.
+
+    Skills:
+      - name: Programming
+        level: Advanced
+        icon: fa-solid fa-code
+        keywords: "MATLAB, Fortran90, Python"
+      - name: Office & typesetting
+        level: Proficient
+        icon: fa-solid fa-file-lines
+        keywords: "LaTeX, Beamer, standard office tools"
+
+    Languages:
+      - name: French
+        summary: Native language
+      - name: English
+        summary: Cambridge C1 diploma
+      - name: Italian
+        summary: Advanced, B2–C1
+      - name: German
+        summary: Intermediate, Goethe-Institut B1 diploma
