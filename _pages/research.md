@@ -52,6 +52,12 @@ Full electromagnetic simulations of complex systems — wireless power transfer 
 <figcaption class="caption">The principle behind all three research settings below: fit a cheap surrogate to a handful of expensive simulations, then use it wherever the real model would be too costly to run.</figcaption>
 </figure>
 
+**Related publications:**
+
+<div class="publications">
+{% bibliography --query @article[topic=intro] --group_by none --template bib_compact %}
+</div>
+
 ### Prediction of radio-frequency electromagnetic fields exposure induced by cellular networks
 
 The fast deployment of 5G technologies along with new bands, beamforming technologies, and denser deployments, motivated the careful exposure characterization and compliance assessment. At the Chaire C2M (Télécom Paris), my work on surrogate modeling is applied to spatial and temporal prediction of RF-EMF exposure correlated to the complexity of urban environments (population density, street network, infrastructure...). Costly ray-tracing simulation results are combined with measurement data coming from drive-tests and fixed sensors in order to estimate continuous exposure maps that evolve over the day. This allows local authorities to accurately estimate RF-EMF exposure without the need of expensive large-scale measurement campaigns.
