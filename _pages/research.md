@@ -82,9 +82,9 @@ Titan, Saturn's biggest moon, is an ocean world, covered by organic materials an
 {% bibliography --query @article[topic=titan] --group_by none --template bib_compact %}
 </div>
 
-### Human exposure assessment around high-power systems
+### Human exposure assessment around inductive power transfer systems
 
-The same surrogate lets exposure levels be mapped around a WPT charger far faster than direct simulation allows, so safety margins can be checked across the full range of geometric and physical variability rather than a handful of worst cases.
+Inductive power transfer (IPT) systems for electric vehicles rely on strong, low-frequency magnetic fields circulating between the transmitter and receiver coils, raising the question of compliance with international guidelines on human exposure to electromagnetic fields (ICNIRP, IEEE). Because exposure depends on the exact position of the driver or a bystander relative to the coils, and this position varies with vehicle geometry, ground clearance, and coil misalignment, the worst-case exposure cannot be captured by a handful of simulated scenarios. During my PhD at GeePs, I built a surrogate-model-based dosimetric methodology that maps exposure levels around IPT systems as a continuous function of these geometric and physical parameters, using realistic human body models. This makes it possible to identify the true worst-case exposure configuration and to check compliance margins across the full range of variability, rather than relying on a few conservative test points.
 
 {% include figure.liquid path="assets/img/research/human_exposure.jpg" class="img-fluid rounded z-depth-1" zoomable=true alt="Dosimetric human body model next to a predicted exposure-factor map around a WPT system" caption="Dosimetric human body model (left) and predicted exposure-factor map around a WPT system (right)." %}
 
@@ -94,9 +94,9 @@ The same surrogate lets exposure levels be mapped around a WPT charger far faste
 {% bibliography --query @article[topic=human_exposure] --group_by none --template bib_compact %}
 </div>
 
-### Surrogate modeling for fast electromagnetic prediction
+### Metamodel-based design optimization of wireless power transfer systems
 
-Applied to inductive power transfer systems for electric vehicles: a polynomial-chaos Kriging (PCK) surrogate is fit adaptively to a full 3D electromagnetic model of the coupled coils, reproducing quantities like the mutual inductance across the full range of geometric variability at a fraction of the simulation cost.
+Designing an inductive power transfer (IPT) system for electric vehicles means navigating a large space of geometric and material parameters (coil shape, ferrite core, air gap...) under competing objectives: maximizing power transfer and efficiency while minimizing cost, weight, and stray magnetic field. Exploring this space with full 3D finite-element simulations is far too slow for multi-objective optimization or global sensitivity analysis. During my PhD at GeePs and Politecnico di Torino, I developed an adaptive sampling algorithm that builds a polynomial-chaos Kriging (PCK) surrogate of the coupled-coil electromagnetics using far fewer simulations than classical designs of experiments, by concentrating new samples where the surrogate is most uncertain. The resulting model reproduces quantities like the mutual inductance across the full design space at a fraction of the simulation cost, and can be plugged directly into gradient-based or multi-objective optimization routines.
 
 {% include figure.liquid path="assets/img/research/surrogate_wpt.jpg" class="img-fluid rounded z-depth-1" zoomable=true alt="PCK surrogate model of a WPT coil's mutual inductance, next to the underlying vehicle/coil finite-element mesh" caption="PCK surrogate of a WPT coil's mutual inductance (left) and the underlying vehicle/coil finite-element mesh (right)." %}
 
