@@ -241,14 +241,6 @@ div#notebook {
   transition: 200ms ease !important;
 }
 
-
-.btn-sm {
-  font-size: inherit;
-  font-weight: normal;
-  height: inherit;
-  line-height: inherit;
-}
-
 button.close {
   border: 0px none;
   font-family: sans-serif;
@@ -438,7 +430,7 @@ kbd {
   white-space: pre-wrap;
 }
 
-.well code,
+
 code {
   font-family: monospace, monospace;
   font-size: 11pt !important;
@@ -502,16 +494,6 @@ pre {
 .toc {
   color: #1c1c1c !important;
   font-size: 11pt !important;
-}
-
-
-.well {
-  background-color: #e4e4e4;
-  border: 1px solid #e4e4e4;
-  color: #303030;
-  border-radius: 2px;
-  -webkit-box-shadow: none;
-  box-shadow: none;
 }
 
 
