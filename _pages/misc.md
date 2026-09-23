@@ -7,13 +7,6 @@ nav: true
 nav_order: 5
 ---
 
-## Collective responsibilities
-
-- *2023 – 2025* Co-organizer of the monthly young researchers seminar, LATMOS, Université Paris-Saclay
-- *2023 – 2025* Postdoctoral fellow representative at LATMOS lab council, LATMOS, Université Paris-Saclay
-- *2021 – 2023* Responsible for the GeePs lab cafeteria, GeePs, Université Paris-Saclay
-- *2020 – 2022* PhD student representative at GeePs lab council, GeePs, Université Paris-Saclay
-
 ## Climbing
 
 - Paul Lagouanelle, Jessie Levillain, and Arthur Grisel-Davy. *La Troche guidebook* for [bleau.info](https://bleau.info/troche) (2022) [\[PDF\]](https://bleau.info/images/topos/la_troche_apr_2022_compressed.pdf)
