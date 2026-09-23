@@ -64,9 +64,9 @@ The fast deployment of 5G technologies along with new bands, beamforming technol
 {% bibliography --query @article[topic=massy] --group_by none --template bib_compact %}
 </div>
 
-### Titan's electromagnetic cavity and Schumann resonances
+### DraGMet/EFIELD experiment on-board the Dragonfly mission on Titan
 
-At LATMOS, I developed a numerical and surrogate model of Titan's electromagnetic cavity — bounded by the ionosphere and a possible subsurface water ocean — to re-assess PWA/Huygens observations and predict the performance of the EFIELD experiment on board NASA's Dragonfly mission for constraining the ocean's depth.
+Titan, Saturn's biggest moon, is an ocean world, covered by organic materials and therefore one of the most promising astrobiological targets in the Solar System, likely holding clues on the origin of life on Earth. That is why NASA has selected the Dragonfly mission to send in 2027 a rotorcraft lander to Titan in order to investigate its prebiotic chemistry and habitability. At LATMOS, my work focused on modeling and optimizing the design of the EFIELD experiment (measurement of the time-varying electric field) on board the DraGMet (Dragonfly Geophysical and Meteorological) package. Schumann resonances (SRs) might appear on Titan, which the EFIELD experiment will aim at measuring. If such resonances exist, they could provide information on Titan's electromagnetic cavity dimensions (notably the thickness of the ice crust). Due to the size of the planetary cavity and the complete chain of measurement (drone and probe modeling, electronics, atmosphere effects...), the solving of the inverse problem is impossible through a direct approach. Thus, I managed to develop an accurate predictor for SRs on Titan by developing a new surrogate model fed by both simulation and measurement data from the Cassini/Huygens mission.
 
 {% include figure.liquid path="assets/img/research/titan_schumann_modes.png" class="img-fluid rounded z-depth-1" zoomable=true alt="Simulated electric field amplitude of the first three Schumann resonance modes in Titan's electromagnetic cavity" caption="Simulated |E| field of the first three Schumann resonance modes in Titan's electromagnetic cavity." %}
 
