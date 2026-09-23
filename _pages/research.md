@@ -25,7 +25,7 @@ The same surrogate lets exposure levels be mapped around a WPT charger far faste
 
 At the Chaire C2M (Télécom Paris), this approach is applied to spatial and temporal prediction of RF-EMF exposure from telecommunications networks: a spatial component (level) is combined with a temporal component (daily/weekly shape) learned from drive-test and sensor data, giving continuous exposure maps that evolve over the day.
 
-{% include figure.liquid path="assets/img/research/massy_24h_cycle.gif" class="img-fluid rounded z-depth-1" avoid_scaling=true alt="Animated 24-hour cycle of predicted RF-EMF exposure over Massy, combining a spatial exposure level map with a learned temporal shape" caption="Predicted RF-EMF exposure over Massy across a 24-hour cycle: E(x, y, t) = Level(x, y) × Shape(t)." %}
+{% include figure.liquid path="assets/img/research/massy_24h_cycle.gif" class="img-fluid rounded z-depth-1" avoid_scaling=true alt="Animated map of predicted RF-EMF exposure over Massy across 2-hour windows of the day, with drive-test route, fixed sensors, and base stations shown" caption="Predicted RF-EMF exposure map over Massy, animated across 2-hour windows of the day, with drive-test route, fixed sensors, and base station locations." %}
 
 ### Titan's electromagnetic cavity and Schumann resonances
 
