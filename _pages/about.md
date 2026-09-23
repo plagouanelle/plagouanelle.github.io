@@ -6,7 +6,7 @@ subtitle:
 
 profile:
   align: right
-  image: paul_headshot.jpg
+  image: paul_headshot_ursi2026.jpg
   image_circular: true # crops the image to make it circular
   more_info: >
     <p>Chaire C2M, LTCI</p>

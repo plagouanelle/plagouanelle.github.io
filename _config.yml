@@ -7,7 +7,6 @@ first_name: Paul
 middle_name:
 last_name: Lagouanelle
 contact_note: >
-  Feel free to reach out by email for anything related to surrogate modeling, EMF exposure, or the EFIELD/Dragonfly experiment.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Postdoctoral researcher at Chaire C2M, Télécom Paris. Surrogate modeling, uncertainty quantification, and RF-EMF exposure assessment.
 footer_text: >
