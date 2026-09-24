@@ -33,7 +33,7 @@ I am a postdoctoral fellow in the [Chaire C2M](https://chairec2m.wp.imt.fr/en/ac
 ## Research interests
 
 - Surrogate modeling and uncertainty quantification for electromagnetic problems
-- Assessment of Human Exposure to Electromagnetic Fields
+- Assessment of human exposure to electromagnetic fields
 - Computational electromagnetics for planetary-science instrumentation
 
 ## Education

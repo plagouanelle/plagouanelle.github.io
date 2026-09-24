@@ -9,74 +9,9 @@ nav_order: 1
 
 ### Surrogate modeling for complex electromagnetic problems
 
-Across many electromagnetic problems, the physical model of interest is either too costly to evaluate many times or only partially known, better described by scattered field measurements, sensor readings, or past campaigns than by any closed-form model. Surrogate modeling addresses both situations: a compact statistical model (e.g., Kriging, ANN, boosting methods) is trained on whichever data is available — costly simulations, real measurements, or both — in order to approximate the underlying physics. Once an accurate surrogate has been built, it can be used at a low computation cost wherever the use of the direct model would fail due to incomplete data or huge computation time: sensitivity analysis, optimization, inverse problems...
+Across many electromagnetic problems, the physical model of interest is either too costly to evaluate many times or only partially known, better described by scattered field measurements, sensor readings, or past campaigns than by any direct model. Surrogate modeling addresses both situations: a statistical model (e.g., Kriging, ANN, boosting methods) is trained on whichever data is available (costly simulations, real measurements, mathematical equations...) in order to approximate the underlying physics. Once an accurate surrogate has been built, it can be used at a low computation cost wherever the use of the direct model would fail due to incomplete data or huge computation time: sensitivity analysis, optimization, inverse problems... My work focuses on the design, the training and the use of such surrogate models for complex electromagnetic problems. 
 
-<figure>
-<svg viewBox="0 0 1000 540" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto;">
-  <!-- Design parameters -->
-  <rect x="20" y="130" width="180" height="200" rx="14" style="fill:none; stroke:var(--global-text-color); stroke-width:2;" />
-  <text x="110" y="163" text-anchor="middle" style="fill:var(--global-text-color); font-size:18px; font-weight:600;">Design</text>
-  <text x="110" y="184" text-anchor="middle" style="fill:var(--global-text-color); font-size:18px; font-weight:600;">parameters</text>
-  <line x1="20" y1="196" x2="200" y2="196" style="stroke:var(--global-text-color); stroke-width:2;" />
-  <text x="110" y="228" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:16px; font-style:italic;">x&#8321;</text>
-  <text x="110" y="256" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:16px; font-style:italic;">x&#8322;</text>
-  <text x="110" y="284" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:16px;">&#8942;</text>
-  <text x="110" y="312" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:16px; font-style:italic;">x&#8345;</text>
-
-  <!-- Simulations -->
-  <rect x="300" y="20" width="180" height="90" rx="12" style="fill:none; stroke:var(--global-text-color); stroke-width:2;" />
-  <text x="390" y="50" text-anchor="middle" style="fill:var(--global-text-color); font-size:18px; font-weight:600;">Simulations</text>
-  <line x1="300" y1="62" x2="480" y2="62" style="stroke:var(--global-text-color); stroke-width:2;" />
-  <text x="390" y="86" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:15px; font-style:italic;">y = f(x)</text>
-
-  <!-- Measurements -->
-  <rect x="520" y="20" width="180" height="90" rx="12" style="fill:none; stroke:var(--global-text-color); stroke-width:2;" />
-  <text x="610" y="50" text-anchor="middle" style="fill:var(--global-text-color); font-size:18px; font-weight:600;">Measurements</text>
-  <line x1="520" y1="62" x2="700" y2="62" style="stroke:var(--global-text-color); stroke-width:2;" />
-  <text x="610" y="86" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:15px;">sensors, campaigns</text>
-
-  <!-- Surrogate model -->
-  <rect x="360" y="350" width="280" height="110" rx="14" style="fill:none; stroke:var(--global-theme-color); stroke-width:2;" />
-  <text x="500" y="382" text-anchor="middle" style="fill:var(--global-text-color); font-size:18px; font-weight:600;">Surrogate model</text>
-  <line x1="360" y1="394" x2="640" y2="394" style="stroke:var(--global-theme-color); stroke-width:2;" />
-  <text x="500" y="420" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:15px; font-style:italic;">y &#8776; f&#770;(x)</text>
-  <text x="500" y="443" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:13px;">Kriging, polynomial chaos, ...</text>
-
-  <!-- Predictions -->
-  <rect x="800" y="130" width="180" height="200" rx="14" style="fill:none; stroke:var(--global-text-color); stroke-width:2;" />
-  <text x="890" y="163" text-anchor="middle" style="fill:var(--global-text-color); font-size:18px; font-weight:600;">Predictions</text>
-  <line x1="800" y1="176" x2="980" y2="176" style="stroke:var(--global-text-color); stroke-width:2;" />
-  <text x="890" y="205" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:14px;">sensitivity analysis</text>
-  <text x="890" y="233" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:14px;">optimization</text>
-  <text x="890" y="261" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:14px;">field / exposure maps</text>
-
-  <!-- Expensive (dashed) arrows -->
-  <line x1="201" y1="185" x2="295" y2="90" style="stroke:#e0575a; stroke-width:2.5; stroke-dasharray:7,5;" marker-end="url(#arrow-expensive)" />
-
-  <!-- Cheap (solid, theme color) arrows -->
-  <line x1="201" y1="290" x2="358" y2="400" style="stroke:var(--global-theme-color); stroke-width:2.5;" marker-end="url(#arrow-cheap)" />
-  <line x1="365" y1="112" x2="450" y2="348" style="stroke:var(--global-theme-color); stroke-width:2.5;" marker-end="url(#arrow-cheap)" />
-  <line x1="600" y1="112" x2="540" y2="348" style="stroke:var(--global-theme-color); stroke-width:2.5;" marker-end="url(#arrow-cheap)" />
-  <text x="505" y="255" text-anchor="middle" style="fill:var(--global-text-color-light); font-size:14px;">training</text>
-  <line x1="642" y1="400" x2="798" y2="280" style="stroke:var(--global-theme-color); stroke-width:2.5;" marker-end="url(#arrow-cheap)" />
-
-  <!-- Legend -->
-  <line x1="40" y1="495" x2="90" y2="495" style="stroke:#e0575a; stroke-width:2.5; stroke-dasharray:7,5;" />
-  <text x="100" y="500" style="fill:var(--global-text-color-light); font-size:14px;">Expensive &#8212; many simulation or measurement campaigns</text>
-  <line x1="40" y1="523" x2="90" y2="523" style="stroke:var(--global-theme-color); stroke-width:2.5;" />
-  <text x="100" y="528" style="fill:var(--global-text-color-light); font-size:14px;">Cheap &#8212; training and querying the surrogate</text>
-
-  <defs>
-    <marker id="arrow-expensive" markerWidth="9" markerHeight="9" refX="6.5" refY="3.5" orient="auto">
-      <path d="M0,0 L7,3.5 L0,7 Z" style="fill:#e0575a;" />
-    </marker>
-    <marker id="arrow-cheap" markerWidth="9" markerHeight="9" refX="6.5" refY="3.5" orient="auto">
-      <path d="M0,0 L7,3.5 L0,7 Z" style="fill:var(--global-theme-color);" />
-    </marker>
-  </defs>
-</svg>
-<figcaption class="caption">The principle behind all three research settings below: train a cheap surrogate on whichever data is available — costly simulations, real measurements, or both — then use it wherever the true model would be too slow or too incomplete to query directly.</figcaption>
-</figure>
+{% include figure.liquid path="assets/img/research/surrogate_model_principle.png" class="img-fluid rounded z-depth-1" zoomable=true alt="Diagram of the surrogate modeling principle: design parameters feed expensive simulations, which train a cheap surrogate model used for sensitivity analysis, optimization, and risk analysis" caption="Principle of a surrogate model and its training. Image credit: Shuai Guo." %}
 
 **Related publications:**
 
@@ -112,7 +47,7 @@ Titan, Saturn's biggest moon, is an ocean world, covered by organic materials an
 
 Inductive power transfer (IPT) systems for electric vehicles rely on strong, low-frequency magnetic fields circulating between the transmitter and receiver coils, raising the question of compliance with international guidelines on human exposure to electromagnetic fields (ICNIRP, IEEE). Because exposure depends on the exact position of the driver or a bystander relative to the coils, and this position varies with vehicle geometry, ground clearance, and coil misalignment, the worst-case exposure cannot be captured by a handful of simulated scenarios. During my PhD at GeePs, I built a surrogate-model-based dosimetric methodology that maps exposure levels around IPT systems as a continuous function of these geometric and physical parameters, using realistic human body models. This makes it possible to identify the true worst-case exposure configuration and to check compliance margins across the full range of variability, rather than relying on a few conservative test points.
 
-{% include figure.liquid path="assets/img/research/human_exposure.jpg" class="img-fluid rounded z-depth-1" zoomable=true alt="Dosimetric human body model next to a predicted exposure-factor map around a WPT system" caption="Dosimetric human body model (left) and predicted exposure-factor map around a WPT system (right)." %}
+{% include figure.liquid path="assets/img/research/human_exposure.jpg" class="img-fluid rounded z-depth-1" zoomable=true alt="Dosimetric human body model next to a predicted exposure-factor map around a WPT system" caption="3D human body model (left) and predicted exposure-factor map around a WPT system (right)." %}
 
 **Related publications:**
 
@@ -122,7 +57,7 @@ Inductive power transfer (IPT) systems for electric vehicles rely on strong, low
 
 ### Metamodel-based design optimization of wireless power transfer systems
 
-Designing an inductive power transfer (IPT) system for electric vehicles means navigating a large space of geometric and material parameters (coil shape, ferrite core, air gap...) under competing objectives: maximizing power transfer and efficiency while minimizing cost, weight, and stray magnetic field. Exploring this space with full 3D finite-element simulations is far too slow for multi-objective optimization or global sensitivity analysis. During my PhD at GeePs and Politecnico di Torino, I developed an adaptive sampling algorithm that builds a polynomial-chaos Kriging (PCK) surrogate of the coupled-coil electromagnetics using far fewer simulations than classical designs of experiments, by concentrating new samples where the surrogate is most uncertain. The resulting model reproduces quantities like the mutual inductance across the full design space at a fraction of the simulation cost, and can be plugged directly into gradient-based or multi-objective optimization routines.
+Designing an inductive power transfer (IPT) system for electric vehicles means navigating a large space of geometric and material parameters (coil shape, ferrite core, air gap...) under competing objectives: maximizing power transfer and efficiency while minimizing cost, weight, and stray magnetic field. Exploring this space with full 3D finite-element simulations is far too slow for multi-objective optimization or global sensitivity analysis. During my PhD at GeePs and Politecnico di Torino, I developed an adaptive sampling algorithm that builds a polynomial-chaos Kriging (PCK) surrogate model of various finite-element simulations using far fewer calls of the expensive model than classical designs of experiments, by concentrating new samples where the surrogate is most uncertain. The resulting model reproduces quantities like the mutual inductance across the full design space at a fraction of the simulation cost, and can be plugged directly into gradient-based or multi-objective optimization routines.
 
 {% include figure.liquid path="assets/img/research/surrogate_wpt.jpg" class="img-fluid rounded z-depth-1" zoomable=true alt="PCK surrogate model of a WPT coil's mutual inductance, next to the underlying vehicle/coil finite-element mesh" caption="PCK surrogate of a WPT coil's mutual inductance (left) and the underlying vehicle/coil finite-element mesh (right)." %}
 
